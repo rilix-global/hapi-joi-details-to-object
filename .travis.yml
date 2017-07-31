@@ -1,0 +1,13 @@
+services:
+  - docker
+
+language: generic
+
+before_install:
+  - docker --version
+  - docker-compose --version
+  - docker-compose pull
+
+script:
+  - docker-compose run --rm module yarn install
+  - docker-compose run --rm module yarn test -- --coverage --forceExit --runInBand --no-cache
