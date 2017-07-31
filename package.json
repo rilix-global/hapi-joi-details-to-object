@@ -6,8 +6,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint src spec",
-    "compile": "babel -d dist/ src/",
-    "prepublish": "yarn run compile"
+    "compile": "babel -d dist/ src/"
   },
   "repository": {
     "type": "git",

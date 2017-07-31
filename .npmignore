@@ -1,1 +1,4 @@
 src
+coverage
+node_modules
+spec
