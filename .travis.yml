@@ -3,7 +3,7 @@ sudo: required
 services:
   - docker
 
-language: generic
+language: node
 
 before_install:
   - docker --version
@@ -13,6 +13,7 @@ before_install:
 script:
   - docker-compose run --rm module yarn install
   - docker-compose run --rm module yarn test -- --coverage --forceExit --runInBand --no-cache
+  - docker-compose run --rm module yarn run codeclimate-test-reporter < coverage/lcov.info
   - docker-compose run --rm module yarn run compile
 
 deploy:
