@@ -8,7 +8,15 @@
 ## How to use
 
 ```js
-server.register(require('hapi-joi-details-to-object'))
+import joiDetailsToObject from 'hapi-joi-details-to-object'; 
+
+server.register(joiDetailsToObject);
+```
+
+### Using CommonJS
+
+```js
+server.register(require('hapi-joi-details-to-object').default);
 ```
 
 ## Publish
