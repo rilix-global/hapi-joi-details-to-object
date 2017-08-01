@@ -34,10 +34,10 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "/src/**"
+      "src/**"
     ],
     "coveragePathIgnorePatterns": [
-      "/node_modules/"
+      "node_modules/"
     ]
   }
 }
