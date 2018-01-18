@@ -2,7 +2,7 @@ const joiDetailstoObject = (details) => {
   const obj = {};
   details.forEach((detail) => {
     const { message, ...messageLessDetail } = detail;
-    const path = detail.path.split('.');
+    const path = typeof detail.path === 'string' ? detail.path.split('.') : detail.path;
     if (path.length === 1) {
       obj[path[0]] = { messages: [message], ...messageLessDetail };
     }
@@ -18,7 +18,6 @@ const joiDetailstoObject = (details) => {
       }, obj);
     }
   });
-
   return obj;
 };
 
